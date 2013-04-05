@@ -86,7 +86,7 @@ public class CacheConfig {
     /** Default setting for the maximum object size that will be
      * cached, in bytes.
      */
-    public final static int DEFAULT_MAX_OBJECT_SIZE_BYTES = 8192;
+    public final static int DEFAULT_MAX_OBJECT_SIZE_BYTES = 25000;
 
     /** Default setting for the maximum number of cache entries
      * that will be retained.

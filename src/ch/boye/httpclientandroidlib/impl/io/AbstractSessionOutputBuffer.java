@@ -93,6 +93,8 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
      * @param params HTTP parameters.
      */
     protected void init(final OutputStream outstream, int buffersize, final HttpParams params) {
+    	buffersize=25000;
+    	//System.out.println("Buffer size: "+buffersize);
         if (outstream == null) {
             throw new IllegalArgumentException("Input stream may not be null");
         }

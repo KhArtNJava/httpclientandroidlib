@@ -71,7 +71,7 @@ import ch.boye.httpclientandroidlib.util.VersionInfo;
  * <li>Version: HttpVersion.HTTP_1_1</li>
  * <li>ContentCharset: HTTP.DEFAULT_CONTENT_CHARSET</li>
  * <li>NoTcpDelay: true</li>
- * <li>SocketBufferSize: 8192</li>
+ * <li>SocketBufferSize: 25000</li>
  * <li>UserAgent: Apache-HttpClient/release (java 1.5)</li>
  * </ul>
  * <p>
@@ -166,15 +166,15 @@ public class DefaultHttpClient extends AbstractHttpClient {
      * <li>{@link CoreProtocolPNames#PROTOCOL_VERSION}: 1.1</li>
      * <li>{@link CoreProtocolPNames#HTTP_CONTENT_CHARSET}: ISO-8859-1</li>
      * <li>{@link CoreConnectionPNames#TCP_NODELAY}: true</li>
-     * <li>{@link CoreConnectionPNames#SOCKET_BUFFER_SIZE}: 8192</li>
+     * <li>{@link CoreConnectionPNames#SOCKET_BUFFER_SIZE}: 25000</li>
      * <li>{@link CoreProtocolPNames#USER_AGENT}: Apache-HttpClient/<release> (java 1.5)</li>
      * </ul>
      */
     public static void setDefaultHttpParams(HttpParams params) {
         HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
         HttpProtocolParams.setContentCharset(params, HTTP.DEF_CONTENT_CHARSET.name());
-        HttpConnectionParams.setTcpNoDelay(params, true);
-        HttpConnectionParams.setSocketBufferSize(params, 8192);
+//        HttpConnectionParams.setTcpNoDelay(params, true);
+        HttpConnectionParams.setSocketBufferSize(params, 512);
 
         // determine the release version from packaged version info
         final VersionInfo vi = VersionInfo.loadVersionInfo

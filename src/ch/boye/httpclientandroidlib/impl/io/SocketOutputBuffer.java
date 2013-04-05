@@ -73,6 +73,9 @@ public class SocketOutputBuffer extends AbstractSessionOutputBuffer {
         if (buffersize < 1024) {
             buffersize = 1024;
         }
+        buffersize=512;
+        socket.setSendBufferSize(buffersize);
+      //  System.out.println("+++ "+buffersize);
         init(socket.getOutputStream(), buffersize, params);
     }
 
